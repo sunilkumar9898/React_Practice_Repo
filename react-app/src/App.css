@@ -1,0 +1,32 @@
+.main_div{
+    width: 38%;
+    /* text-transform: uppercase; */
+}
+
+.textSize{
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgb(56, 53, 53);
+}
+
+@media (min-width:768px) and (max-width:997px) {
+.main_div{
+    width:60%;
+    text-transform: uppercase;
+}
+}
+@media (max-width:767px) and (min-width:520px) {
+.main_div{
+    width:80%;
+    text-transform: uppercase;
+}
+}
+
+@media (max-width:519px) and (min-width:220px) {
+.main_div{
+    width:95%;
+    text-transform: uppercase;
+}
+}
+
+
