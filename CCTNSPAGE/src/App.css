@@ -1,0 +1,10 @@
+.main_div{
+    justify-content: space-around;
+}
+.label_name{
+    background-color: rgba(41, 150, 239, 0.845);
+    padding: 11px 10px;
+    border-radius: 4px;
+    color: white;
+
+}
