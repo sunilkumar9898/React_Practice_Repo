@@ -53,7 +53,7 @@ const Form = () => {
           <div>
 
               <div className='rounded-4 shadow-lg px-5 py-4  main_div mx-auto mt-5'>
-                  <h1 className='text-center py-1 text-danger  '>Registration Form  </h1>
+                  <h1 className='text-center py-1 text-primary  '>Registration Form  </h1>
                   <div className="d-flex flex-column  text-left  textSize ">
                       {formFields?.map(field => <Inputgroup field={field} onChangeCb={handleChange} formData={value1} />)}
 

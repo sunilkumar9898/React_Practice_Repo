@@ -16,7 +16,7 @@ const Inputgroup = ({ field, onChangeCb, formData }) => {
 
     return (
         <Reusable name={field.name} title={field.title}>
-            {field.type === 'date' ? <Calendar className='w-100' onChange={onChangeCb} name={field.name} value={formData?.[field.name]} placeholder={field.placeholder} /> : null}
+            {field.type === 'date' ? <Calendar className='w-100' onChange={onChangeCb} name={field.name} value={formData?.[field.name]} placeholder={field.placeholder} />:null}
             {['text', 'password', 'email']?.includes(field.type) ? <InputText type={field.type} onChange={onChangeCb} name={field.name} value={formData?.[field.name] ?? ""} placeholder={field.placeholder} className="w-100" /> : null}
             {field.type === 'dropdown' ? <Dropdown options={cities} optionLabel="name"
                 placeholder={field.placeholder} className="w-100" onChange={onChangeCb} name={field.name} value={formData?.[field.name]} /> : null}
