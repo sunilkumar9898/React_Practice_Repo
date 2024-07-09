@@ -1,0 +1,34 @@
+table{
+    width: 100%;
+    border: 1px solid rgb(16, 14, 14);
+    border-radius: 5px;
+}
+table thead th{
+border: 1px solid rgb(19, 17, 17);
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    border-radius: 5px;
+
+}
+tbody{
+    width: 100%;
+}
+table tbody tr {
+border: 1px solid rgb(10, 9, 9);
+    border-radius: 5px;
+
+    text-align: center;
+    padding: 8px;
+}
+
+tbody tr td{
+    border: 1px solid rgb(20, 22, 20);
+    border-radius: 5px;
+
+}
+
+.form1{
+    width: 10%;
+    
+}
