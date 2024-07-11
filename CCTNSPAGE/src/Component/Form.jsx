@@ -131,6 +131,7 @@ const Form = () => {
         setData(intialvalue);
     };
 
+
     const getOptions = (field) => {
         if (field.name === "gender") {
             return genders;
@@ -177,6 +178,11 @@ const Form = () => {
                     submit
                 </button>
             </div>
+
+
+
+
+            
             <div className="container d-flex p-2 mt-5 flex-wrap mx-auto justify-content-center ">
                 {showdata.map((ele, idx) => {
                     return (
@@ -184,7 +190,7 @@ const Form = () => {
                             key={idx}
                             className="text-left border w-25 mx-5  p-4 mx-2  my-2 rounded-3 shadow-lg">
                             <div className="d-flex justify-content-between py-1">
-                                <div> यूआईडी सं.</div> <div> {ele.fname}</div>
+                                <div> यूआईडी सं.</div> <div> {ele.uid}</div>
                             </div>
                             <div className="d-flex justify-content-between  py-1">
                                 <div>प्रथम नाम </div> <div>{ele.fname}</div>

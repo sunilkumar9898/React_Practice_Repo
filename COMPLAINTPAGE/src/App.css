@@ -1,0 +1,19 @@
+ .containner{
+width: 90%;
+margin: auto;
+ }
+ .table thead tr th{
+    font-size: 14px;
+color: white;
+background-color: rgb(237, 116, 11);
+    border: 1px solid rgba(222, 216, 216, 0.362);
+}
+
+.table tbody tr td{
+    font-size: 12px;
+    border: 1px solid rgba(104, 96, 96, 0.272);
+}
+
+.table{
+    border: 1px solid red;
+}
