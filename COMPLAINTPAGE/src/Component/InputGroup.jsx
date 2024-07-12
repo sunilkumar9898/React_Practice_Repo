@@ -8,11 +8,8 @@ import { InputTextarea } from "primereact/inputtextarea";
 const InputGroup = ({ onchangecb, field, formvalue, options = [] }) => {
     return (
         <div>
-        <LabelGroup name={field.name} >
-          {field.title}
-                {field.required ? (
-                    <span className="text-danger ">*</span>
-                ):null}
+        <LabelGroup name={field.name} title={field.title} required={field.required} >
+
                 {["text", "email", "password", "number"]?.includes(
                     field.type
                 ) ? (
