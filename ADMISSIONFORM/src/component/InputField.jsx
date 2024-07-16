@@ -3,31 +3,16 @@ import Formlabel from "./Formlabel";
 import { InputText } from "primereact/inputtext";
 import { Dropdown } from "primereact/dropdown";
 import { Calendar } from "primereact/calendar";
+import { RadioButton } from "primereact/radiobutton";
 import { Checkbox } from "primereact/checkbox";
 
-const InputField = ({ onchangecb, formValue, field, options = [] }) => {
-        // const [selectedCheck, setSelectedCheck] = useState([]);
-        // console.log(selectedCheck);
-        // const handleChange = (val) => {
-        //     let validCheck = selectedCheck.some((ele) => ele === val);
-        //     if (validCheck) {
-        //         let newValue = selectedCheck.filter((ele) => ele !== val);
-        //         setSelectedCheck(newValue);
-        //     } else {
-        //         setSelectedCheck((prev) => [...prev, val]);
-        //         // setSelectedCheck.push(val)
-        //         // selectedCheck.push(val)
-        //     }
-        //     console.log(validCheck);
+const InputField = ({
+    onchangecb,
+    formValue,
+    field,
+    options = [],
 
-        //     // setSelectedCheck((prevSelected) => {
-        //     //     if (prevSelected.includes(val)) {
-        //     //         return prevSelected.filter((ele) => ele !== val);
-        //     //     } else {
-        //     //         return [...prevSelected, val];
-        //     //     }
-        //     // });
-        // };
+}) => {
     return (
         <div>
             <Formlabel
@@ -70,22 +55,50 @@ const InputField = ({ onchangecb, formValue, field, options = [] }) => {
                     />
                 ) : null}
 
-                {/* {field.type === "checkbox" ? (
+                {field.type === "radio" ? (
                     <div>
-                        {field.categories.map((ele) => (
+                        {field.Gender.map((ele) => (
                             <div>
-                                <input
-                                    field={field.name}
-                                    type="checkbox"
-                                    onChange={() => handleChange(ele.name)}
-                                    checked={selectedCheck.includes(ele.name)}
+                                <RadioButton
+                                    // inputId={ele.value}
+                                    name={field.name}
+                                    value={ele.value}
+                                    onChange={onchangecb}
+                                    checked={
+                                        formValue?.[field.name] === ele.value
+                                    }
                                 />
-                                <p>{ele.name}</p>
-                                <p>{ele.ca }</p>
+                                <label  className="ml-2">
+                                    {ele.name}
+                                </label>
                             </div>
                         ))}
                     </div>
-                ) : null} */}
+                ) : null}
+
+                {field.type === "checkbox" ? (
+                    <div>
+                        {field.Course.map((ele) => {
+                            return (
+                                <div>
+                                    <Checkbox
+                                        inputId={ele.key}
+                                        name={field.name}
+                                        value={ele.value}
+                                        onChange={onchangecb}
+                                        checked={formValue?.[field.name]?.some((item) => item === ele.value
+                                        )}
+                                    />
+                                    <label
+                                        htmlFor={ele.key}
+                                        className="ml-2">
+                                        {ele.value}
+                                    </label>
+                                </div>
+                            );
+                        })}
+                </div>
+                ):null}
             </Formlabel>
         </div>
     );

@@ -43,19 +43,32 @@ const formFileds = [
         optionValue: "name",
     },
     {
-        name: "chechbox",
+        name: "gender",
+        type: "radio",
+        title: "Gender",
+        Gender: [
+            { name: "male", value: "Male" },
+            { name: "female", value: "FeMale" },
+            { name: "other", value: "Other" },
+        ],
+    },
+    {
+        name: "course",
         type: "checkbox",
         title: "Course",
-        categories: [
-            { name: "Accounting", key: "A" },
-            { name: "Marketing", key: "M" },
-            { name: "Production", key: "P" },
-            { name: "Research", key: "R" },
+        Course: [
+            { value: "HTML", key: "HT" },
+            { value: "JAVA", key: "JA" },
+            { value: "CSS", key: "CS" },
         ],
     },
 ];
 
-const religios = [{ name: "Hindu" }, { name: "Muslim" }, { name: "Sikh" }];
+const religios = [
+    { name: "Islam" },
+    { name: "Christianity" },
+    { name: "Hinduism" },
+];
 
 const intialValue = {
     name: "",
@@ -63,7 +76,9 @@ const intialValue = {
     mname: "",
     dob: "",
     religion: "",
-    chechbox:[]
+    gender:"",
+    course: null,
+
 };
 const Form = () => {
     const toast = useRef(null);
@@ -71,15 +86,25 @@ const Form = () => {
     const [value, setValue] = useState([]);
     console.log(value);
 
-    const handleChange = (e) => {
+    const handleChange = (checkvalue, e) => {
         const { name, value } = e.target;
-        setData((pre) => ({
-            ...pre,
-            [name]: value,
-        }));
+        if (checkvalue.type === "checkbox") {
+            let selectitem = data?.[name] ?? [];
+            let isexist = selectitem.some((ele) => ele === value);
+            if (isexist) {
+                selectitem = selectitem.filter((val) => val !== value);
+            } else {
+                selectitem.push(value);
+            }
+            setData((prev) => ({ ...prev, [name]: selectitem }));
+        } else {
+            setData((pre) => ({
+                ...pre,
+                [name]: value,
+            }));
+        }
     };
 
-    
     const handleSubmit = () => {
         let validInput = formFileds.some(
             (ele) => ele.required && !data[ele.name]
@@ -99,7 +124,7 @@ const Form = () => {
                 life: 5000,
             });
             setValue((prev) => [...prev, data]);
-            setData(intialValue);
+            setData("");
         }
     };
     const getOptions = (field) => {
@@ -118,7 +143,7 @@ const Form = () => {
                             <InputField
                                 key={field.name}
                                 field={field}
-                                onchangecb={handleChange}
+                                onchangecb={(e) => handleChange(field, e)}
                                 formValue={data}
                                 options={getOptions(field)}
                             />
@@ -135,8 +160,24 @@ const Form = () => {
             </div>
 
             <div className="container">
+
+                <div>
+
+                    {formFileds.map((ele) => (
+                        <div className="d-inline-flex px-2 mt-5 bg-primary p-2 text-white">{ ele.title}</div>
+                    ))}
+                </div>
                 {value.map((ele) => {
-                    return <p>{ele.name}</p>;
+                    return (
+                        <div>
+                            {formFileds.map((head) => (
+                                <div className="d-inline-flex px-2 p-2 ">
+                                    {/* <div>{head.title}</div> */}
+                                    <div>{ele?.[head.name]}</div>
+                                </div>
+                            ))}
+                        </div>
+                    );
                 })}
             </div>
         </>
