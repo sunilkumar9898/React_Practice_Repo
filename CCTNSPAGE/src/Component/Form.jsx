@@ -182,7 +182,7 @@ const Form = () => {
 
 
 
-            
+
             <div className="container d-flex p-2 mt-5 flex-wrap mx-auto justify-content-center ">
                 {showdata.map((ele, idx) => {
                     return (

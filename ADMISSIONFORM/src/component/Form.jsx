@@ -160,11 +160,12 @@ const Form = () => {
             </div>
 
             <div className="container">
-
+                
                 <div>
-
                     {formFileds.map((ele) => (
-                        <div className="d-inline-flex px-2 mt-5 bg-primary p-2 text-white">{ ele.title}</div>
+                        <div className="d-inline-flex px-2 mt-5 bg-primary p-2 text-white">
+                            {ele.title}
+                        </div>
                     ))}
                 </div>
                 {value.map((ele) => {

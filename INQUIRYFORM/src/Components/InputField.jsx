@@ -13,7 +13,10 @@ const InputField = ({
 }) => {
     return (
         <div className="">
-            <LableGroup name={field.name} title={field.title} required={field.required}>
+            <LableGroup
+                name={field.name}
+                title={field.title}
+                required={field.required}>
                 {["text", "email", "password", "number"]?.includes(
                     field.type
                 ) ? (
@@ -32,8 +35,6 @@ const InputField = ({
                 {field.type === "dropdown" ? (
                     <Dropdown
                         name={field.name}
-                        type={field.type}
-                        title={field.type}
                         onChange={onchangeCb}
                         optionLabel={field.optionLabel}
                         optionValue={field.optionValue}
