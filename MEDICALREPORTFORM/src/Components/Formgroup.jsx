@@ -21,7 +21,6 @@ const Formgroup = () => {
     };
     const handleSubmit = () => {
         let validInput = formFields.filter((ele) => ele.required && !data[ele.name]);
-        console.log(validInput.name ,'456');
         if (validInput.length>0) {
             for (let element  of validInput) {
                 alert(`Please enter: ${element.title || element.name}`);

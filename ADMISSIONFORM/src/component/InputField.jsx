@@ -60,7 +60,6 @@ const InputField = ({
                         {field.Gender.map((ele) => (
                             <div>
                                 <RadioButton
-                                    // inputId={ele.value}
                                     name={field.name}
                                     value={ele.value}
                                     onChange={onchangecb}

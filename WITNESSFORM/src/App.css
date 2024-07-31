@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.label {
+    width: 30%;
+}
+.main_div {
+    border: 1px solid rgba(156, 152, 152, 0.211);
+    display: flex;
+    margin: auto;
+    width: 75%;
+    gap: 20px;
+}
+
+.age_div {
+    border: 1px solid rgba(156, 152, 152, 0.211);
+    display: flex;
+    margin: auto;
+    width: 75%;
+    gap: 20px;
+}
+
+.age_child_div {
+    width: 50%;
+}
+
+.table_div{
+    width: 90%;
+    margin: 40px auto;
+}
+
+.table_div thead{
+    font-size: 13px;
+}
+.table_div tbody{
+    font-size: 12px;
+}
+@media screen and (min-width: 220px) and (max-width: 440px) {
+    .main_div {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+
+    .age_div {
+        border: 1px solid rgba(156, 152, 152, 0.211);
+        display: block;
+        margin: auto;
+        width: 100%;
+
+
+    }
+    .age_child_div {
+        width: 90%;
+    }
+    .label {
+        width: 30%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 441px) and (max-width: 520px) {
+    .main_div {
+        display: block;
+        margin: auto;
+        width: 95%;
+    }
+        .age_div {
+        border: 1px solid rgba(156, 152, 152, 0.211);
+        display: block;
+        margin: 10px 0px;
+        margin: auto;
+        width: 100%;
+        gap: 20px;
+    }
+    .age_child_div {
+        width: 100%;
+    }
+    .label {
+        width: 30%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 521px) and (max-width: 676px) {
+    .main_div {
+        display: block;
+        margin: auto;
+        width: 95%;
+    }
+        .age_div {
+        border: 1px solid rgba(156, 152, 152, 0.211);
+        display: block;
+        margin: 10px 0px;
+        margin: auto;
+        width: 100%;
+        gap: 20px;
+    }
+    .age_child_div {
+        width: 100%;
+    }
+    .label {
+        width: 30%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 677px) and (max-width:768px) {
+    .main_div {
+        display:block;
+        margin: auto;
+        width: 80%;
+    }
+        .age_div {
+        border: 1px solid rgba(156, 152, 152, 0.211);
+        display: block;
+        margin: 10px 0px;
+        margin: auto;
+        width: 80%;
+        gap: 20px;
+    }
+    .age_child_div {
+        width: 100%;
+    }
+    .label {
+        width: 30%;
+        font-size: 12px;
+    }
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width:990px) {
+    .main_div {
+        display:flex;
+        margin: auto;
+        width: 100%;
+    }
+        .age_div {
+        border: 1px solid rgba(156, 152, 152, 0.211);
+        display: block;
+        margin: 10px 0px;
+        margin: auto;
+        width: 100%;
+        gap: 20px;
+    }
+    .age_child_div {
+        width: 100%;
+    }
+    .label {
+        width: 30%;
+        font-size: 12px;
+    }
+}
